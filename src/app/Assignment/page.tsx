@@ -21,9 +21,12 @@ export default function Page() {
 
   return (
     <div className="flex gap-6">
+      <title>7Solutions - Assignment</title>
+      <meta content="7Solutions - Assignments Page" key="title" property="og:title" />
+
       {item.map((item) => (
         <Link href={item.link} key={item.title}>
-          <Card className="w-52 h-full">
+          <Card className="h-full w-52">
             <CardMedia alt="Auto Delete Todo" className="h-32" component="img" image={item.imagePath} />
             <CardContent>
               <Typography sx={{ color: "text.primary" }} variant="h5">

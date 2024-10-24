@@ -45,10 +45,16 @@ export default function Page() {
 
   return (
     <PageContainer className="p-4 text-white rounded-md bg-gradient-to-br">
+      <title>Technical - Auto Delete Todo List</title>
+      <meta content="7Solutions - Decsiprtion how Auto Delete Todo List work" key="title" property="og:title" />
+
+      {/* Title */}
       <Typography color="white" variant="h3">
         Step by steps (4 steps)
       </Typography>
+
       <div className="flex flex-wrap items-center justify-center w-full gap-4 pt-4">
+        {/* Step 1 */}
         <GlassCard className="flex flex-col max-w-md p-4 min-w-80" display={step >= 0}>
           <CardContent className="text-white">
             <Typography gutterBottom color="white" component="div" fontSize={24} fontWeight="bold" variant="h3">
@@ -73,6 +79,7 @@ export default function Page() {
           </CardActions>
         </GlassCard>
 
+        {/* Step 2 */}
         <GlassCard className="flex flex-col max-w-md p-4 min-w-80" display={step >= 1}>
           <CardContent>
             <Typography gutterBottom color="white" component="div" fontSize={24} fontWeight="bold" variant="h3">
@@ -114,6 +121,7 @@ export default function Page() {
           </CardActions>
         </GlassCard>
 
+        {/* Step 3 */}
         <GlassCard className="flex flex-col max-w-md p-4 min-w-80" display={step >= 2}>
           <CardContent>
             <Typography gutterBottom color="white" component="div" fontSize={24} fontWeight="bold" variant="h3">
@@ -155,6 +163,7 @@ export default function Page() {
           </CardActions>
         </GlassCard>
 
+        {/* Step 4 */}
         <GlassCard className="flex flex-col max-w-md p-4 min-w-80" display={step >= 3}>
           <CardContent>
             <Typography gutterBottom color="white" component="div" fontSize={24} fontWeight="bold" variant="h3">

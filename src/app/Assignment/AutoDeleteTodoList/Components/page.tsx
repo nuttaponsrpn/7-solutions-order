@@ -25,7 +25,10 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="flex gap-4 justify-center lg:justify-start flex-wrap overflow-hidden">
+    <div className="flex flex-wrap justify-center gap-4 overflow-hidden lg:justify-start">
+      <title>Components - Auto Delete Todo List</title>
+      <meta content="7Solutions - Documentation of Auto Delete Todo List" key="title" property="og:title" />
+
       <Card className="max-w-[460px] p-4">
         <JumpingContainer name="ABCD">
           {Array(3)
@@ -79,11 +82,11 @@ export default function Page() {
           <br />
           <div className="flex">
             <div className="w-28">On Click:</div>
-            <input disabled className="w-40 border-solid border-2" ref={clickRef} type="text" />
+            <input disabled className="w-40 border-2 border-solid" ref={clickRef} type="text" />
           </div>
           <div className="flex">
             <div className="w-28">On Jumping:</div>
-            <input disabled className="w-40 border-solid border-2" ref={jumpingRef} type="text" />
+            <input disabled className="w-40 border-2 border-solid" ref={jumpingRef} type="text" />
           </div>
           <span className="text-nowrap">
             Item: {JSON.stringify({ index: 0, name: "Jumping button", type: "AnyType" })}

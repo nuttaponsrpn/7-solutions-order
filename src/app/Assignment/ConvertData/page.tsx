@@ -96,6 +96,9 @@ export default function Page() {
 
   return (
     <div>
+      <title>Assignment - Convert Data</title>
+      <meta content="7Solutions - Convert Data Assignment" key="title" property="og:title" />
+
       {/* Search bar */}
       <Search>
         <SearchIconWrapper>
