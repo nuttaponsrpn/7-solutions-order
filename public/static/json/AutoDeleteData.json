@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Apple",
+    "type": "Fruit"
+  },
+  {
+    "name": "Broccoli",
+    "type": "Vegetable"
+  },
+  {
+    "name": "Mushroom",
+    "type": "Vegetable"
+  },
+  {
+    "name": "Banana",
+    "type": "Fruit"
+  },
+  {
+    "name": "Tomato",
+    "type": "Vegetable"
+  },
+  {
+    "name": "Orange",
+    "type": "Fruit"
+  },
+  {
+    "name": "Mango",
+    "type": "Fruit"
+  },
+  {
+    "name": "Pineapple",
+    "type": "Fruit"
+  },
+  {
+    "name": "Cucumber",
+    "type": "Vegetable"
+  },
+  {
+    "name": "Watermelon",
+    "type": "Fruit"
+  },
+  {
+    "name": "Carrot",
+    "type": "Vegetable"
+  }
+]

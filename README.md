@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### 7 Solutions ORDER 
+## Introduction
+- Project using 
+- - Next.js -> 14.2.15 # https://nextjs.org/docs
+- - Material UI -> 6.1.4 # h[ttps://mui.com/](https://mui.com/material-ui/getting-started/)
+- - React -> 18.3.1 # https://react.dev/learn
+- - React-hook-form -> 7.53.1 # https://react-hook-form.com/get-started
+- - Axios -> 1.7.7 # https://axios-http.com/docs/intro
+- - ZOD -> 3.23.8 # https://zod.dev/?id=introduction
+- - Storybook -> https://storybook.js.org/docs
 
-## Getting Started
+## Running code
+- - Install dependencies -> yarn install
+- - Start server -> yarn dev
+- - Start unit test server -> yarn storybook
+- - Playwright for E2E automation testing
 
-First, run the development server:
+### Consistency code handler
+## Code solutions
+## Use tailwindcss
+- Utility class for styling website (make a responsive)
+Use eslint-plugin-readable-tailwind
+- Make a tailwind class sorting
+Use headwind (extension)
+- Sorting tailwind class for consistency
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Use JSX Sort props in eslint
+- Sort all props in the same direction for make a code consistency
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Global dependency create a project
+## Use axios
+- Global setup calling REST API
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Use MUI
+- Create custom theme
+- Component libraries
+- Styled component in some specific styling element
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Use useForm
+- Make a form control validate input validation
 
-## Learn More
+## Use ZOD
+- Global validation template (string, number, email, password...)
+- to make a validation and error message
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Use storybook
+- For unit testing and document components
