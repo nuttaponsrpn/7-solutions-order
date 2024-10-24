@@ -1,4 +1,7 @@
 ### 7 Solutions ORDER 
+## Demo 
+- https://7-solutions-order.vercel.app
+
 ## Introduction
 - Project using 
 - - Next.js -> 14.2.15 # https://nextjs.org/docs
@@ -15,8 +18,7 @@
 - - Start unit test server -> yarn storybook
 - - Playwright for E2E automation testing
 
-### Consistency code handler
-## Code solutions
+# Consistency code handler - Code solutions
 ## Use tailwindcss
 - Utility class for styling website (make a responsive)
 Use eslint-plugin-readable-tailwind
@@ -27,21 +29,23 @@ Use headwind (extension)
 ## Use JSX Sort props in eslint
 - Sort all props in the same direction for make a code consistency
 
-### Global dependency create a project
-## Use axios
-- Global setup calling REST API
-
+# Global dependency in project
 ## Use MUI
 - Create custom theme
 - Component libraries
 - Styled component in some specific styling element
 
-## Use useForm
-- Make a form control validate input validation
-
-## Use ZOD
-- Global validation template (string, number, email, password...)
-- to make a validation and error message
-
 ## Use storybook
 - For unit testing and document components
+
+> **Warning**
+> Doesn't use, In real project it's very helpful. It's maybe use in the future.
+> ## Use axios
+> - Global setup calling REST API
+> 
+> ## Use useForm
+> - Make a form control validate input validation
+> 
+> ## Use ZOD
+> - Global validation template (string, number, email, password...)
+> - to make a validation and error message
