@@ -51,13 +51,13 @@ export default function Page() {
   }
 
   return (
-    <div className="flex flex-col h-full gap-4 md:flex-row md:h-auto jumping-item-container">
+    <div className="jumping-item-container">
       {/* Title */}
       <title>Assignment - Auto Delete Todo List</title>
       <meta content="7Solutions - Auto Delete Todo List Assignment" key="title" property="og:title" />
 
       {!!notSelectedData.length && (
-        <>
+        <div className="flex flex-col h-full gap-4 md:flex-row md:h-auto ">
           <JumpingContainer name="">
             {notSelectedData.map((item) => (
               <JumpingButton
@@ -85,7 +85,7 @@ export default function Page() {
               ))}
             </JumpingContainer>
           ))}
-        </>
+        </div>
       )}
     </div>
   );
