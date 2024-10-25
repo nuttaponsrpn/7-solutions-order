@@ -56,37 +56,35 @@ export default function Page() {
       <title>Assignment - Auto Delete Todo List</title>
       <meta content="7Solutions - Auto Delete Todo List Assignment" key="title" property="og:title" />
 
-      {!!notSelectedData.length && (
-        <div className="flex flex-col h-full gap-4 md:flex-row md:h-auto ">
-          <JumpingContainer name="">
-            {notSelectedData.map((item) => (
+      <div className="flex flex-col h-full gap-4 md:flex-row md:h-auto ">
+        <JumpingContainer name="">
+          {notSelectedData.map((item) => (
+            <JumpingButton
+              autoJump={false}
+              delay={5}
+              item={item}
+              key={item.index}
+              onClick={handleItemMove}
+              onJumping={handleJumping}
+            />
+          ))}
+        </JumpingContainer>
+
+        {dataType.map((type) => (
+          <JumpingContainer key={type} name={type}>
+            {getItemByType(type).map((item) => (
               <JumpingButton
-                autoJump={false}
+                autoJump={!!type}
                 delay={5}
                 item={item}
                 key={item.index}
-                onClick={handleItemMove}
+                onClick={(item) => handleItemMove(item, !!type)}
                 onJumping={handleJumping}
               />
             ))}
           </JumpingContainer>
-
-          {dataType.map((type) => (
-            <JumpingContainer key={type} name={type}>
-              {getItemByType(type).map((item) => (
-                <JumpingButton
-                  autoJump={!!type}
-                  delay={5}
-                  item={item}
-                  key={item.index}
-                  onClick={(item) => handleItemMove(item, !!type)}
-                  onJumping={handleJumping}
-                />
-              ))}
-            </JumpingContainer>
-          ))}
-        </div>
-      )}
+        ))}
+      </div>
     </div>
   );
 }
