@@ -25,7 +25,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 overflow-hidden lg:justify-start">
+    <div className="flex flex-wrap justify-center gap-4 overflow-hidden lg:justify-start p-2">
       <title>Components - Auto Delete Todo List</title>
       <meta content="7Solutions - Documentation of Auto Delete Todo List" key="title" property="og:title" />
 

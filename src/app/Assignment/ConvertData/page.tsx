@@ -95,7 +95,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div>
+    <div className="h-full">
       <title>Assignment - Convert Data</title>
       <meta content="7Solutions - Convert Data Assignment" key="title" property="og:title" />
 
@@ -112,10 +112,12 @@ export default function Page() {
         />
       </Search>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-4 md:flex-row">
         {/* Base Data */}
         {!!baseData && (
-          <StyledCard className="block border-r-2 border-solid w-28 border-slate-200" sx={{ flex: "0 0 250px" }}>
+          <StyledCard
+            className={`block w-full h-full border-r-2 border-solid max-h-60 md:w-auto md:max-h-full border-slate-200`}
+          >
             {filterBaseData.map((user) => (
               <DisplayUserList key={user.id} user={user} onClick={(name) => setSearchValue(name)} />
             ))}
@@ -124,10 +126,10 @@ export default function Page() {
 
         {/* Convert Data */}
         {!!formatData && (
-          <StyledCard className="flex-1 p-3">
-            <div className="relative flex flex-wrap flex-1 gap-4">
+          <StyledCard className="flex items-center justify-center flex-1 p-3">
+            <div className="flex flex-wrap flex-1 h-full gap-4">
               {filterFormatData.map((dept) => (
-                <Card key={dept} sx={{ height: "320px" }}>
+                <Card className="w-full md:w-auto" key={dept} sx={{ height: "320px" }}>
                   <CardHeader title={dept} />
                   <CardContent>
                     <div>Male: {formatData[dept].male}</div>
@@ -188,6 +190,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const StyledCard = styled(Card)`
-  height: calc(100vh - 190px);
+  height: calc(100vh - 204px);
   overflow: auto;
 `;

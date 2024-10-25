@@ -51,7 +51,7 @@ export default function Page() {
   }
 
   return (
-    <div className="flex gap-4 jumping-item-container">
+    <div className="flex flex-col h-full gap-4 md:flex-row md:h-auto jumping-item-container">
       {/* Title */}
       <title>Assignment - Auto Delete Todo List</title>
       <meta content="7Solutions - Auto Delete Todo List Assignment" key="title" property="og:title" />

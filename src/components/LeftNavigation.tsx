@@ -3,12 +3,14 @@
 import { NavigationMenu } from "@/types/NavigationMenu.type";
 import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
 import CottageRoundedIcon from "@mui/icons-material/CottageRounded";
+import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import TerminalIcon from "@mui/icons-material/Terminal";
-import { Collapse, styled, SxProps, Theme } from "@mui/material";
+import { Collapse, IconButton, styled, SxProps, Theme } from "@mui/material";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -17,7 +19,6 @@ import ListSubheader from "@mui/material/ListSubheader";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
-import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
 
 const menuList: NavigationMenu[] = [
   { name: "Home", link: "/", icon: <CottageRoundedIcon /> },
@@ -55,7 +56,7 @@ const menuList: NavigationMenu[] = [
   },
 ];
 
-export default function LeftNavigation() {
+export default function LeftNavigation({ onClickNav }: { onClickNav: () => void }) {
   const pathname = usePathname();
 
   const MenuList = ({ item, style }: { item: NavigationMenu; style?: SxProps<Theme> }) => {
@@ -75,7 +76,7 @@ export default function LeftNavigation() {
 
     return (
       <>
-        <Link href={!!item.link && item.link !== "#" ? item.link : "#"}>
+        <Link href={!!item.link && item.link !== "#" ? item.link : "#"} onClick={onClickNav}>
           <StyledListItemButton
             key={item.name + item.link}
             selected={item.link === pathname}
@@ -97,7 +98,7 @@ export default function LeftNavigation() {
               {!!subMenu.subMenu?.length ? (
                 <MenuList item={subMenu} style={{ pl: 4 }} />
               ) : (
-                <Link href={!subMenu?.subMenu?.length && !!subMenu.link ? subMenu.link : "#"}>
+                <Link href={!subMenu?.subMenu?.length && !!subMenu.link ? subMenu.link : "#"} onClick={onClickNav}>
                   <StyledListItemButton selected={subMenu.link === pathname} sx={{ pl: !!style ? 6 : 4 }}>
                     <StyledListItemIcon>{subMenu.icon}</StyledListItemIcon>
                     <StyledListItemText name={subMenu.name} />
@@ -112,12 +113,18 @@ export default function LeftNavigation() {
 
   return (
     <List
-      className="w-full max-w-80"
+      className="flex-1 w-full"
       component="nav"
       subheader={
-        <ListSubheader className="!bg-transparent border-b-[1px] boder-solid border-[#DEDEDE]" component="div">
-          7 Solutions
-        </ListSubheader>
+        <div className="border-b-[1px] boder-solid border-[#DEDEDE] flex">
+          <ListSubheader className="!bg-transparent" component="div">
+            7 Solutions
+          </ListSubheader>
+
+          <IconButton className="!ml-auto block md:!hidden !mr-2" onClick={() => onClickNav()}>
+            <MenuRoundedIcon />
+          </IconButton>
+        </div>
       }
     >
       {menuList.map((item) => (
