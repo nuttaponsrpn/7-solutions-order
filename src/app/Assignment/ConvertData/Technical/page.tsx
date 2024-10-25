@@ -95,8 +95,9 @@ export default function Page() {
               <br />- <Bold>What The function does??</Bold>
               <br />
               <br />- First create a department from Object.keys and avoid duplicate department
-              <br />- Secound count simple object like male, female
+              <br />- Second count simple object like male, female
               <br />- Create hair object by using key of Hair type, and Address object by concatenate firstname and
+              lastname
               <br />- Finally find min and max age by comparing user age in group
               <br />
             </Typography>
