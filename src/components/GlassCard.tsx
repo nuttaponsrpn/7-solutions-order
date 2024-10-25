@@ -8,7 +8,7 @@ type GlassCardProps = HTMLAttributes<HTMLDivElement> & {
 
 export default function GlassCard({ display, children, ...props }: GlassCardProps) {
   return (
-    <Fade in={display}>
+    <Fade in={display} timeout={800}>
       <div
         {...props}
         className={`${props.className}

@@ -1,6 +1,6 @@
 "use client";
 
-import DisplayUserHover from "@/components/DisplayUserHover";
+import DisplayUserList from "@/components/DisplayUserList";
 import { GroupByDepartment, Hair } from "@/types/UserByDepartment.type";
 import { UserResponse } from "@/types/UserResponse.type";
 import SearchIcon from "@mui/icons-material/Search";
@@ -117,7 +117,7 @@ export default function Page() {
         {!!baseData && (
           <StyledCard className="block border-r-2 border-solid w-28 border-slate-200" sx={{ flex: "0 0 250px" }}>
             {filterBaseData.map((user) => (
-              <DisplayUserHover key={user.id} user={user} onClick={(name) => setSearchValue(name)} />
+              <DisplayUserList key={user.id} user={user} onClick={(name) => setSearchValue(name)} />
             ))}
           </StyledCard>
         )}

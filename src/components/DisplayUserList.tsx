@@ -5,7 +5,7 @@ import { ClickAwayListener, ListItem, ListItemButton, ListItemIcon, ListItemText
 import SearchIcon from "@mui/icons-material/Search";
 import { MouseEvent, useState } from "react";
 
-export default function DisplayUserHover({ user, onClick }: { user: User; onClick: (name: string) => void }) {
+export default function DisplayUserList({ user, onClick }: { user: User; onClick: (name: string) => void }) {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
   const handlePopoverOpen = (event: MouseEvent<HTMLElement>) => {
@@ -26,6 +26,7 @@ export default function DisplayUserHover({ user, onClick }: { user: User; onClic
           </ListItem>
 
           <ListItemIcon
+            aria-label="search-icon"
             className="z-30"
             onClick={(e) => {
               e.preventDefault();
@@ -52,7 +53,7 @@ export default function DisplayUserHover({ user, onClick }: { user: User; onClic
       >
         <div className="p-2">
           <div>
-            <pre>{JSON.stringify(user, null, 2)}</pre>
+            <pre className="user-detail">{JSON.stringify(user, null, 2)}</pre>
           </div>
         </div>
       </Popover>

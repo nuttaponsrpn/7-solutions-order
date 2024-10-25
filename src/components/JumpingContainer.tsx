@@ -11,10 +11,14 @@ type JumpingContainerProps = {
 
 export default function JumpingContainer({ name, children }: JumpingContainerProps) {
   return (
-    <Card className="border-solid border-[1px] border-black" elevation={0} sx={{ minWidth: 275 }}>
+    <Card
+      className={`border-solid border-[1px] border-black ${name ? `container-${name}` : "container-main"}`}
+      elevation={0}
+      sx={{ minWidth: 275 }}
+    >
       {!!name && <CardHeader className="text-center bg-slate-200" title={name} />}
       <CardContent className="w-full h-full !p-0">
-        <Item className="py-4 px-2 h-full">
+        <Item className="h-full px-2 py-4">
           <Stack className="flex !flex-col gap-2 items-center justify-center" direction="row">
             {children}
           </Stack>

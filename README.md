@@ -13,9 +13,9 @@
 - - Storybook -> https://storybook.js.org/docs
 
 ## Running code
-- - Install dependencies -> yarn install
-- - Start server -> yarn dev
-- - Start unit test server -> yarn storybook
+- - Install dependencies -> pnpm install
+- - Start server -> pnpm dev
+- - Start unit test server -> pnpm storybook
 - - Playwright for E2E automation testing
 
 # Consistency code handler - Code solutions
