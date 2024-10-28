@@ -8,18 +8,13 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 export default function Page() {
   const [autoDeleteData, setAutoDeleteData] = useState<AutoDelete[]>([]);
   const [jumpingIndex, setJumpingIndex] = useState<number[]>([]);
+  const [dataType, setDataType] = useState<string[]>([]);
 
   // Memo
   // Create all type list that have no selected
   const notSelectedData = useMemo(
     () => autoDeleteData.filter((item) => !jumpingIndex.includes(item.index)),
     [autoDeleteData, jumpingIndex],
-  );
-
-  // Create type from loading data
-  const dataType = useMemo(
-    () => autoDeleteData.reduce((acc, cur) => (!acc.includes(cur.type) ? [...acc, cur.type] : acc), [] as string[]),
-    [autoDeleteData],
   );
 
   // Callback
@@ -29,10 +24,18 @@ export default function Page() {
   );
 
   useEffect(() => {
+    console.log("fetch");
     fetch("/static/json/AutoDeleteData.json")
       .then((response) => response.json())
       .then((data: AutoDelete[]) => {
-        setAutoDeleteData(data.map((item, index) => ({ ...item, index: index })));
+        const formatData = data.map((item, index) => ({ ...item, index: index }));
+        setAutoDeleteData(formatData);
+
+        const groupDataByType = formatData.reduce(
+          (acc, cur) => (!acc.includes(cur.type) ? [...acc, cur.type] : acc),
+          [] as string[],
+        );
+        setDataType(groupDataByType);
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
