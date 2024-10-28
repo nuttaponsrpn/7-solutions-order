@@ -53,7 +53,6 @@ export const ClickApple: Story = {
 
     const containerVegetableEl = document.querySelector(".container-Vegetable") as HTMLDivElement;
     await expect(containerVegetableEl).toBeInTheDocument();
-    console.log("containerFruitEl", containerFruitEl);
 
     await userEvent.click(buttonEl);
     buttonEl = await canvas.findByText("Apple", { exact: true });

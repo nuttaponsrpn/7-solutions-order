@@ -24,7 +24,6 @@ export default function Page() {
   );
 
   useEffect(() => {
-    console.log("fetch");
     fetch("/static/json/AutoDeleteData.json")
       .then((response) => response.json())
       .then((data: AutoDelete[]) => {
