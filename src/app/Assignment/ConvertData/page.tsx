@@ -53,7 +53,7 @@ export default function Page() {
           male: 0,
           female: 0,
           ageRange: "",
-          hair: { Black: 0, Blond: 0, Chestnut: 0, Brown: 0 },
+          hair: {},
           addressUser: {},
         };
       }
@@ -69,11 +69,13 @@ export default function Page() {
       const hairColor = hair.color as keyof Hair;
       if (hair.color in dept.hair) {
         dept.hair[hairColor]++;
+      } else {
+        dept.hair[hairColor] = 1;
       }
 
       // Add user address (combine name once)
       const fullName = `${firstName}${lastName}`;
-      dept.addressUser[fullName] = address.address;
+      dept.addressUser[fullName] = address.postalCode;
 
       // Calculate age range
       const ageGroup = Math.floor(age / 10) * 10;
@@ -90,6 +92,7 @@ export default function Page() {
 
   const formatDisplayHair = useCallback((hair: Hair) => {
     return Object.keys(hair)
+      .filter((type) => hair[type as keyof Hair] > 0)
       .map((type) => `${type}: ${hair[type as keyof Hair]}`)
       .join(", ");
   }, []);

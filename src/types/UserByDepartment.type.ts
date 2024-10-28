@@ -15,8 +15,5 @@ type AddressUser = {
 };
 
 export type Hair = {
-  Black: number;
-  Blond: number;
-  Chestnut: number;
-  Brown: number;
+  [color: string]: number;
 };
